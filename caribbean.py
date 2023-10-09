@@ -1,4 +1,17 @@
-from utils import makeCity, makeCoordinate
+from utils import makeCoordinate
+
+# data structure for a city
+def makeCity(name, coordinate):
+    return (name, coordinate)
+
+def getCityName(city):
+    return city[0]
+
+def getCityCoordinates(city):
+    return city[1]
+
+def printCity(city):
+    print('City: {}\nLocation: {}\n'.format(getCityName(city), getCityCoordinates(city)))
 
 # data structure to store list of cities
 cities = dict()

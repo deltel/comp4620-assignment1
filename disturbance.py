@@ -51,6 +51,13 @@ def determineCategory(disturbance):
     else:
         return 'Category 5 Hurricane'
 
+def moveOneTick(disturbance):
+    newXCoord = getColumn(disturbance) - int(getSpeed(disturbance) / 5) * 1
+    return disturbance[:3] + (newXCoord, getRow(disturbance))
+
+def isActive(disturbance):
+    return getColumn(disturbance) > 0
+
 def sayDisturbance(disturbance):
     name = getName(disturbance)
     category = determineCategory(disturbance)

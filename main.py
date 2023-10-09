@@ -1,4 +1,5 @@
-from disturbance import makeDisturbance, sayDisturbance
+from disturbance import makeDisturbance, sayDisturbance, moveOneTick, isActive
+from caribbean import cities, printCity
 
 if __name__ == '__main__':
     option = '0'
@@ -12,6 +13,8 @@ if __name__ == '__main__':
             disturbanceName = input('Enter the name of the next disturbance:\n')
             nextDisturbance = makeDisturbance(disturbanceName)
             activeDisturbances.append(nextDisturbance)
+        elif option == '2':
+            activeDisturbances = [moveOneTick(disturbance) for disturbance in activeDisturbances if isActive(moveOneTick(disturbance))]
         elif option == '3':
             if len(activeDisturbances) == 0:
                 print('No active disturbances\n\n\n')
@@ -21,3 +24,7 @@ if __name__ == '__main__':
                     print(sayDisturbance(disturbance))
                     print('----------------------------------')
                 print('\n\n\n')
+        elif option == '4':
+            print('All cities on map')
+            for city in cities.values():
+                printCity(city)
