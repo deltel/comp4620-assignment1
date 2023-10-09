@@ -31,3 +31,14 @@ cities['san-jose'] = makeCity('San Jose', makeCoordinate(8, 1))
 cities['colon'] = makeCity('Colon', makeCoordinate(8, 3))
 cities['santiago'] = makeCity('Santiago', makeCoordinate(4, 7))
 cities['port-au-prince'] = makeCity('Port-au-Prince', makeCoordinate(4, 6))
+
+import random
+
+def makeInitialIntensity():
+    return random.randrange(10, 161)
+
+def makeInitialSpeed():
+    return random.randrange(5, 11)
+
+def makeInitialRow():
+    return random.randrange(1, 8)
